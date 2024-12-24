@@ -1,0 +1,37 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+      <hibernate-configuration>
+     	<session-factory>
+     		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+     		<property name="connection.url">jdbc:mysql://localhost:3306/myhiber</property>
+     		<property name="connection.username">root</property>
+     		<property name="connection.password">root</property>
+     		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+     		<property name="hbm2ddl.auto">update</property>
+     		<property name="show_sql">true</property>
+     		<property name="format_sql">true</property>
+     		
+			<mapping class="com.hibernate.SaveData.Student"/>	
+			
+			<mapping class="com.hibernate.Embeddable.Employee"/>
+			<mapping class="com.hibernate.Embeddable.Address"/>
+			
+			<mapping class="com.hibernate.onetoone.Question"/>
+			<mapping class="com.hibernate.onetoone.Answer"/>
+			
+			<mapping class="com.hibernate.onetomany.Question"/>
+			<mapping class="com.hibernate.onetomany.Answer"/>	
+     	
+     		<mapping class="com.hibernate.manytomany.Employee"/>
+			<mapping class="com.hibernate.manytomany.Project"/>	
+			
+			<mapping class="com.hibernate.cascading.Hobby"/>
+			<mapping class="com.hibernate.cascading.Person"/>
+			
+			<mapping class="com.hibernate.CriteriaAPI.Teacher"/>
+			<mapping class="com.hibernate.CriteriaAPI.School"/>
+     	
+     	</session-factory>   
+        
+        </hibernate-configuration>
